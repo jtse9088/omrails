@@ -1,4 +1,4 @@
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-fixed-top navbar-inverse">
 	<div class="navbar-inner">
 	  <div class="container">
 
@@ -10,7 +10,7 @@
 	    </a>
 
 	    <!-- Be sure to leave the brand out there if you want it shown -->
-	    <a class="brand" href="#">One Month Rails</a>
+	    <%= link_to "One Month Rails", root_path, class: "brand" %>
 
 	    <!-- Place everything within .nav-collapse to hide it until above 768px -->
 	    <div class="nav-collapse collapse">
@@ -19,7 +19,20 @@
 		      <li><%= link_to "About", about_path %></li>
 		    </ul>  
 		    <ul class="nav pull-right">
-		      <li><%= link_to "Login", "#" %></li>
+
+		    	<% if user_signed_in? %>
+			    	<button type="button" class="btn btn-default navbar-btn">
+			    		<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+			    	</button>		    	
+			    	<button type="button" class="btn btn-default navbar-btn">
+			    		<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+			    	</button>
+		    	<% else %>
+			    	<button type="button" class="btn btn-default navbar-btn">
+			    		<li><%= link_to "Login", new_user_session_path %></li>
+			    	</button>
+			    <% end %>
+		      
 		    </ul> 
 	    </div><!-- /.nav-collapse -->
 	  </div><!-- /.container -->
