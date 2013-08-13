@@ -22,6 +22,9 @@
 
 		    	<% if user_signed_in? %>
 			    	<button type="button" class="btn btn-default navbar-btn">
+			    		<li><%= link_to "Add +", new_pin_path %></li>
+			    	</button>		  
+			    	<button type="button" class="btn btn-default navbar-btn">
 			    		<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
 			    	</button>		    	
 			    	<button type="button" class="btn btn-default navbar-btn">
