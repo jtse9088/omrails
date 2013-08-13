@@ -22,3 +22,5 @@ doc/
 # Ignore Paperchlip uploaded files
 /public/system
 *~
+
+/sampleimages
